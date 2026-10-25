@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collin's OS</title>
+</head>
+<body style="background-color: blueviolet; font-family: Arial, Helvetica, sans-serif;">
+    <div style="display: flex; justify-content: space-between; position: absolute; width: 100%; backdrop-filter: blur(10px); background-color: rgba(0, 0, 0, 0.25);">
+        <p style="margin-left: 16px; color: antiquewhite; cursor: pointer;" id="menuwindowopen">
+            Collin's OS (Click me for menu!)
+        </p>
+        <p style="margin-left: 16px; color: rgb(13, 168, 168);">
+            I have <strong>AURA</strong>
+        </p>
+        <p id="timeElement" style="margin-left: 16px; color: chartreuse;">
+            Time
+        </p>
+    </div>
+    <img src="./assets/noteicon.png" style="top: 80px; left: 80px; width: 64px; height: 64px; position: absolute;" id="windowopen">
+    <p style="cursor: pointer; position: absolute; top: 120px; left: 80px;" id="windowopen">Welcome</p>
+    <img src="./assets/noteicon.png" style="top: 160px; left: 80px; width: 64px; height: 64px; position: absolute;" id="contactwindowopen">
+    <p style="cursor: pointer; position: absolute; top: 200px; left: 80px;" id="contactwindowopen">Contact Me</p>
+    <img src="./assets/noteicon.png" style="top: 240px; left: 80px; width: 64px; height: 64px; position: absolute;" id="thingswindowopen">
+    <p style="cursor: pointer; position: absolute; top: 280px; left: 80px;" id="thingswindowopen">Things about Me</p>
+    <div id="menuwindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+        <p id="menuwindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
+            Main Menu
+            <p id="windowopenmenu">Welcome</p>
+            <p id="contactwindowopenmenu">Introduction</p>
+            <p id="thingswindowopenmenu">Things about me</p>
+            <p id="shutdown">Shut Down</p>
+        </p>
+        <p style="cursor: pointer; width: 16px; height: 16px;" id="menuwindowclose">Close</p>
+    </div>
+    <div id="window" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+        <p id="windowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
+            Welcome!
+            <h1 style="margin: 4px; padding: 4px;">Welcome to <strong>Collin's OS!</strong></h1>
+            <h2>Introduction</h2>
+            <a href="https://github.com/NotTacos2">My Github</a>
+            <img src="./assets/notmebutsimilartome.png" alt="Maybe Me" style="width: 64px; height: 64px; border-radius: 16px; object-fit: cover;">
+        </p>
+        <p style="cursor: pointer; width: 16px; height: 16px;" id="windowclose">Close</p>
+    </div>
+    <div id="contactwindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+        <p id="contactwindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
+            Contact Me
+            <p>My Github: <strong>NotTacos2</strong></p>
+            <p>My Slack username: <strong>collizhang</strong></p>
+        </p>
+        <p style="cursor: pointer; width: 16px; height: 16px;" id="contactwindowclose">Close</p>
+    </div>
+    <div id="thingswindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+        <p id="thingswindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
+            Things about me
+            <p>I program in <strong>HTML/CSS/JS, Go, C++, Java, Python.</strong></p>
+            <p>I do alot of robotics, especially <strong>FRC and FTC</strong></p>
+        </p>
+        <p style="cursor: pointer; width: 16px; height: 16px;" id="thingswindowclose">Close</p>
+    </div>
+    
+    <script>
+        function updateTime() {
+            var currentTime = new Date().toLocaleString();
+            var timeText = document.querySelector("#timeElement");
+            timeText.innerHTML = currentTime;
+        }
+        var welcomeWindow = document.querySelector("#window")
+        var welcomeWindowClose = document.querySelector("#windowclose")
+        var welcomeWindowOpen = document.querySelector("#windowopen")
+        var welcomeWindowOpenMenu = document.querySelector("#windowopenmenu")
+        var thingsWindow = document.querySelector("#thingswindow")
+        var thingsWindowClose = document.querySelector("#thingswindowclose")
+        var thingsWindowOpen = document.querySelector("#thingswindowopen")
+        var thingsWindowOpenMenu = document.querySelector("#thingswindowopenmenu")
+        var contactWindow = document.querySelector("#contactwindow")
+        var contactWindowClose = document.querySelector("#contactwindowclose")
+        var contactWindowOpen = document.querySelector("#contactwindowopen")
+        var contactWindowOpenMenu = document.querySelector("#contactwindowopenmenu")
+        var menuWindow = document.querySelector("#menuwindow")
+        var menuWindowClose = document.querySelector("#menuwindowclose")
+        var menuWindowOpen = document.querySelector("#menuwindowopen")
+        welcomeWindowClose.addEventListener("click", function() {
+            closeWindow(welcomeWindow);
+        });
+        welcomeWindowOpen.addEventListener("click", function() {
+            openWindow(welcomeWindow);
+        });
+        welcomeWindowOpenMenu.addEventListener("click", function() {
+            openWindow(welcomeWindow);
+        });
+        contactWindowClose.addEventListener("click", function() {
+            closeWindow(contactWindow);
+        });
+        contactWindowOpen.addEventListener("click", function() {
+            openWindow(contactWindow);
+        });
+        contactWindowOpenMenu.addEventListener("click", function() {
+            openWindow(contactWindow);
+        });
+        thingsWindowClose.addEventListener("click", function() {
+            closeWindow(thingsWindow);
+        });
+        thingsWindowOpen.addEventListener("click", function() {
+            openWindow(thingsWindow);
+        });
+        thingsWindowOpenMenu.addEventListener("click", function() {
+            openWindow(thingsWindow);
+        });
+        menuWindowClose.addEventListener("click", function() {
+            closeWindow(menuWindow);
+        });
+        menuWindowOpen.addEventListener("click", function () {
+            openWindow(menuWindow)
+        });
+        shutdown.addEventListener("click", function() {
+            try {
+                window.close();
+            } catch (e) {
+                console.log(e);
+                alert("Sadly it didn't manage to shut down, you might have something on your browser to prevent the shut down function.");
+            }
+        });
+        function closeWindow(element) {
+            element.style.display = "none"
+        }
+        function openWindow(element) {
+            element.style.display = "flex"
+        }
+        setInterval(updateTime, 1000);
+
+        // Make the DIV element draggable:
+        dragElement(document.getElementById("window"));
+        dragElement(document.getElementById("contactwindow"));
+        dragElement(document.getElementById("thingswindow"));
+        dragElement(document.getElementById("menuwindow"));
+
+        function dragElement(element) {
+            var initialX = 0;
+            var initialY = 0;
+            var currentX = 0;
+            var currentY = 0;
+
+            if (document.getElementById(element.id + "header")) {
+                document.getElementById(element.id + "header").onmousedown = startDragging;
+            } else {
+                element.onmousedown = startDragging;
+            }
+
+            function startDragging(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // Step 7: Get the mouse cursor position at startup.
+                initialX = e.clientX;
+                initialY = e.clientY;
+                // Step 8: Set up event listeners for mouse movement (`elementDrag`) and mouse button release (`closeDragElement`).
+                document.onmouseup = stopDragging;
+                document.onmousemove = dragElement;
+            }
+
+            // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
+            function dragElement(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // Step 10: Calculate the new cursor position.
+                currentX = initialX - e.clientX;
+                currentY = initialY - e.clientY;
+                initialX = e.clientX;
+                initialY = e.clientY;
+                // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
+                element.style.top = (element.offsetTop - currentY) + "px";
+                element.style.left = (element.offsetLeft - currentX) + "px";
+            }
+
+            // Step 12: Define the `stopDragging` function to stop tracking mouse movement by removing the event listeners.
+            function stopDragging() {
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }   
+    </script>
+</body>
+</html>
