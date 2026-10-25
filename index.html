@@ -25,18 +25,21 @@
     <p style="cursor: pointer; position: absolute; top: 280px; left: 80px;" id="thingswindowopen">Things about Me</p>
     <img src="./assets/noteicon.png" style="top: 320px; left: 80px; width: 64px; height: 64px; position: absolute;" id="projectswindowopen">
     <p style="cursor: pointer; position: absolute; top: 360px; left: 80px;" id="projectswindowopen">My projects</p>
-    <div id="menuwindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+    <img src="./assets/noteicon.png" style="top: 400px; left: 80px; width: 64px; height: 64px; position: absolute;" id="weatherwindowopen">
+    <p style="cursor: pointer; position: absolute; top: 440px; left: 80px;" id="weatherwindowopen">My Weather</p>
+    <div id="menuwindow" style="position: absolute; display: none; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
         <p id="menuwindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
             Main Menu
             <p id="windowopenmenu">Welcome</p>
             <p id="contactwindowopenmenu">Introduction</p>
             <p id="thingswindowopenmenu">Things about me</p>
             <p id="projectswindowopenmenu">My projects</p>
+            <p id="weatherwindowopenmenu">My weather</p>
             <p id="shutdown">Shut Down</p>
         </p>
         <p style="cursor: pointer; width: 16px; height: 16px;" id="menuwindowclose">Close</p>
     </div>
-    <div id="window" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+    <div id="window" style="position: absolute; display: none; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
         <p id="windowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
             Welcome!
             <h1 style="margin: 4px; padding: 4px;">Welcome to <strong>Collin's OS!</strong></h1>
@@ -46,7 +49,7 @@
         </p>
         <p style="cursor: pointer; width: 16px; height: 16px;" id="windowclose">Close</p>
     </div>
-    <div id="contactwindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+    <div id="contactwindow" style="position: absolute; display: none; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
         <p id="contactwindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
             Contact Me
             <p>My Github: <strong>NotTacos2</strong></p>
@@ -54,7 +57,7 @@
         </p>
         <p style="cursor: pointer; width: 16px; height: 16px;" id="contactwindowclose">Close</p>
     </div>
-    <div id="thingswindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+    <div id="thingswindow" style="position: absolute; display: none; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
         <p id="thingswindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
             Things about me
             <p>I program in <strong>HTML/CSS/JS, Go, C++, Java, Python.</strong></p>
@@ -62,11 +65,11 @@
         </p>
         <p style="cursor: pointer; width: 16px; height: 16px;" id="thingswindowclose">Close</p>
     </div>
-    <div id="projectswindow" style="position: absolute; display: flex; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+    <div id="projectswindow" style="position: absolute; display: none; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
         <p id="projectswindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
             My projects
         </p>
-        <a href="https://github.com/NotTacos2/interface-clicker">Interface Clicker in godot, styled as a city clicker. Was made for hack club milkyway but was never finished</a>
+        <a href="https://github.com/NotTacos2/interface-clicker">Interface Clicker in godot, styled as a city clicker. Was made for hack club milkyway but was never finished.</a>
         <a href="https://github.com/NotTacos2/lootjackpot-mod">Loot drops based on luck for minecraft mod in java. Made for hack club hackcraft.</a>
         <a href="https://github.com/NotTacos2/folktale-game">A simple text adventure game based on luck in python. Made for hack club folktale.</a>
         <a href="https://github.com/NotTacos2/maze-game-sprig">A simple maze game but with 3 different types of teleporters in javascript. Made for hack club sprig.</a>
@@ -74,7 +77,18 @@
         <a href="https://github.com/NotTacos2/falling-crate-catcher">A crate catching game with scores in python. Made for hack club snek.</a>
         <a href="https://github.com/NotTacos2/Slope-Calc">A slope calculating website that uses shrinked html code. Made for hack club shrink.</a>
         <a href="https://github.com/NotTacos2/nottacos2.github.io">A website portfolio about myself. Made for hack club crescent.</a>
-        <p style="cursor:  pointer; width: 16px; height: 16px;" id="projectswindowclose">Close</p>
+        <p style="cursor: pointer; width: 16px; height: 16px;" id="projectswindowclose">Close</p>
+    </div>
+    <div id="weatherwindow" style="position: absolute; display: none; border: solid; border-radius: 16px; flex-direction: column; backdrop-filter: blur(4px); background-color: cornflowerblue; width: 10%;">
+        <p id="weatherwindowheader" style="width: 100%; display: flex; align-items: center; cursor: grab; justify-content: center; margin-top: 8px;">
+            My city's weather
+        </p>
+        <p id="temperature"></p>
+        <p id="feels_like"></p>
+        <p id="pressure"></p>
+        <p id="humidity"></p>
+        <p id="wind_speed"></p>
+        <p style="cursor: pointer; width: 16px; height: 16px;" id="weatherwindowclose">Close</p>
     </div>
     
     <script>
@@ -99,6 +113,10 @@
         var projectsWindowClose = document.querySelector("#projectswindowclose")
         var projectsWindowOpen = document.querySelector("#projectswindowopen")
         var projectsWindowOpenMenu = document.querySelector("#projectswindowopenmenu")
+        var weatherWindow = document.querySelector("#weatherwindow")
+        var weatherWindowClose = document.querySelector("#weatherwindowclose")
+        var weatherWindowOpen = document.querySelector("#weatherwindowopen")
+        var weatherWindowOpenMenu = document.querySelector("#weatherwindowopenmenu")
         var menuWindow = document.querySelector("#menuwindow")
         var menuWindowClose = document.querySelector("#menuwindowclose")
         var menuWindowOpen = document.querySelector("#menuwindowopen")
@@ -137,7 +155,18 @@
         });
         projectsWindowOpenMenu.addEventListener("click", function() {
             openWindow(projectsWindow);
-        })
+        });
+        weatherWindowClose.addEventListener("click", function() {
+            closeWindow(weatherWindow);
+        });
+        weatherWindowOpen.addEventListener("click", function() {
+            openWindow(weatherWindow);
+            findweather();
+        });
+        weatherWindowOpenMenu.addEventListener("click", function() {
+            openWindow(weatherWindow);
+            findweather();
+        });
         menuWindowClose.addEventListener("click", function() {
             closeWindow(menuWindow);
         });
@@ -152,6 +181,7 @@
                     It is now safe to close this website. :)
                     </p>
                 `
+                document.body.style.backgroundColor = "black";
             } catch (e) {
                 console.log(e);
                 alert("Sadly it didn't manage to shut down, you might have something on your browser to prevent the shut down function. But hey atleast you get this instead");
@@ -171,6 +201,31 @@
         dragElement(document.getElementById("thingswindow"));
         dragElement(document.getElementById("menuwindow"));
         dragElement(document.getElementById("projectswindow"));
+        dragElement(document.getElementById("weatherwindow"));
+
+        async function findweather() {
+            const web = "https://api.openweathermap.org/data/2.5/weather?q=tucson&appid=0c3e87b2884a3adc6d8d3b74bb39d5cc&units=metric"
+            try {
+                const res = await fetch(web);
+                const data = await res.json();
+                if (res.ok) {
+                    showweatherdetails(data);
+                } else {
+                    alert("Couldn't fetch openweathermap. Please try again.");
+                }
+            } catch (error) {
+                console.log(error);
+                alert('An error was found, please try again later!');
+            }
+        }
+
+        function showweatherdetails(data) { // "temp":15.14,"feels_like":14.35,"temp_min":13.57,"temp_max":16.62,"pressure":1016,"humidity":63,"sea_level":1016
+            document.getElementById("temperature").textContent = `${data.main.temp} C`;
+            document.getElementById("feels_like").textContent = `Feels like ${data.main.feels_like} C`;
+            document.getElementById("pressure").textContent = `Pressure: ${data.main.pressure}`;
+            document.getElementById("humidity").textContent = `Humidity: ${data.main.humidity}`;
+            document.getElementById("wind_speed").textContent = `Wind Speed: ${data.wind.speed} m/s`;
+        }
 
         function dragElement(element) {
             var initialX = 0;
